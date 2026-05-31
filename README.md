@@ -219,9 +219,6 @@ export async function createInvoice(amountSats: number, memo?: string) {
 | `PLATFORM_FEE_PERCENT` | `5` | Platform fee on auction sales |
 | `MINT_COST_SATS` | `100` | Cost to mint a drawing |
 
-
-Warning: This shit was totally vibe coded
-
 ---
 
 ## License

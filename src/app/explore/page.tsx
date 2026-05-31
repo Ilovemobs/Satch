@@ -1,7 +1,18 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function ExplorePage() {
+  if (!prisma) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-xl font-semibold mb-2">Database Not Connected</h2>
+        <p className="text-zinc-500">Set DATABASE_URL in your environment to enable the marketplace.</p>
+      </div>
+    );
+  }
+
   const [drawings, auctions] = await Promise.all([
     prisma.drawing.findMany({
       where: { isMinted: true },

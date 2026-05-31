@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const [activeAuctions, totalDrawings, totalUsers] = await Promise.all([
     prisma.auction.count({ where: { status: "ACTIVE" } }),

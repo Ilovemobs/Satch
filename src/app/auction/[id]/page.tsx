@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { AuctionClient } from "./AuctionClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function AuctionPage({
   params,
 }: {
